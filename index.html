@@ -1,8 +1,15 @@
-<html>
-    <head>
-        <title>Oh!</title>
-    </head>
-    <body>
-        <h1>Kablam</h1>
-    </body>
-</html>
+<!doctype html><html><head><title>Snake</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://fonts.googleapis.com/css?family=Geo" rel="stylesheet"><link rel="stylesheet" type="text/css" href="style.css"><script src="//cdn.jsdelivr.net/phaser/2.6.1/phaser.min.js"></script><script src="script.min.js"></script></head><body><div id="title-container"><h1>CLASSICAL SNAKE</h1></div><div id="main-container"><table><tr><td style="text-align: left"><button id="feedback" onclick="showModal()">GIVE&nbsp;FEEDBACK</button></td><td><h2>SCORE: <span id="score">0</span></h2></td></tr></table></div><div id="mobile-message" style="display:none;text-align: center"><h2>Unfortunately Classical Snake does not work on mobile.</h2><form id="demand-form" style="display: none"><h3>Demand the building of the mobile app by giving us your address, we will send you an e-mail when it will be ready.</h3><label class="field-label" for="email"><h3>YOUR E-MAIL</h3></label><input id="email" type="email" class="fullwidth"><br><label class="field-label" for="ostype"><h3>YOUR PHONE TYPE</h3></label><select id="ostype"><option value="android">Android</option><option value="iphone">iPhone</option><option value="other">Other</option></select><br><br><label style="font-size:1.2em">You will never receive spam from Classical Snake and/or its partners(since we have none)</label><br></form><br><button id="demand-button" onclick="demand()">DEMAND THE MOBILE APP!</button></div><div id="modal"><form><label for="name"><h2>YOUR NAME</h2></label><input id="name" style="width:98%" type="text"><br><label for="feedback-content"><h2>YOUR FEEDBACK</h2></label><textarea id="feedback-content" rows="8" cols="65" style="resize: none">
+          </textarea><br><div style="text-align: right;padding: 0.2em"><button type="button" onclick="submitFeedBack()">SUBMIT</button></div></form></div><div id="dark" onclick="hideModal()"></div><div id="some-element"></div><script type="text/javascript">window.onload = function () {
+        function mobile() {
+            try{ document.createEvent("TouchEvent"); return true; }
+              catch(e){ return false; }
+        }
+        console.log(mobile());
+        if(!mobile()) {
+            init();
+        }
+        else {
+          document.getElementById('main-container').style.display = 'none';
+          document.getElementById('mobile-message').style.display = 'block'
+        }
+      }</script></body></html>
